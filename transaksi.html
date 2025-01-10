@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi - Aplikasi Simpan Pinjam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Transaksi</h2>
+        <form id="transaksiForm">
+            <input type="text" id="jumlah" placeholder="Jumlah" required>
+            <select id="tipeTransaksi">
+                <option value="simpan">Simpan</option>
+                <option value="pinjam">Pinjam</option>
+            </select>
+            <button type="submit">Proses</button>
+        </form>
+        <p id="transaksiResult"></p>
+        <nav>
+            <a href="beranda.html">Kembali ke Beranda</a>
+        </nav>
+    </div>
+    <script>
+        document.getElementById('transaksiForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const jumlah = document.getElementById('jumlah').value;
+            const tipe = document.getElementById('tipeTransaksi').value;
+            document.getElementById('transaksiResult').innerText = `Transaksi berhasil: ${tipe} sebesar ${jumlah}`;
+        });
+    </script>
+</body>
+</html>
